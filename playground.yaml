@@ -7,7 +7,3 @@ spec:
   containers:
     - name: playground
       image: wil42/playground:v1
-  tolerations:
-    - key: node.kubernetes.io/disk-pressure
-      operator: Exists
-      effect: NoSchedule
