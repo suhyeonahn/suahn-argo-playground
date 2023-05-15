@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: wil-playground
+  name: playground
   namespace: dev
 spec:
   containers:
-    - name: wil-playground
+    - name: playground
       image: wil42/playground:v1
   tolerations:
     - key: node.kubernetes.io/disk-pressure
