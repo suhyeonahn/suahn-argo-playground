@@ -4,18 +4,43 @@ metadata:
   name: playground
   namespace: dev
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: playground
+      version: v1
   template:
     metadata:
       labels:
         app: playground
+        version: v1
     spec:
       containers:
       - name: playground-c
         image: wil42/playground:v1
+        ports:
+        - containerPort: 8888
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: playground
+  namespace: dev
+spec:
+  replicas: 0
+  selector:
+    matchLabels:
+      app: playground
+      version: v2
+  template:
+    metadata:
+      labels:
+        app: playground
+        version: v2
+    spec:
+      containers:
+      - name: playground-c
+        image: wil42/playground:v2
         ports:
         - containerPort: 8888
 ---
