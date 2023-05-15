@@ -4,7 +4,7 @@ metadata:
   name: playground1
   namespace: dev
 spec:
-  replicas: 1
+  replicas: 0
   selector:
     matchLabels:
       app: playground
@@ -27,7 +27,7 @@ metadata:
   name: playground2
   namespace: dev
 spec:
-  replicas: 0
+  replicas: 1
   selector:
     matchLabels:
       app: playground
